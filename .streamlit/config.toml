@@ -22,7 +22,7 @@
 #      Streamlit Cloud reads config.toml automatically from the repo.
 # =============================================================================
 
-[server]
+
 # Maximum allowed size (in MB) for file uploads via st.file_uploader.
 # Default is 200 MB. Set to 500 MB to accommodate large network capture files.
 maxUploadSize = 500
@@ -36,7 +36,6 @@ maxMessageSize = 500
 headless = false
 
 
-[theme]
 # Force Streamlit's base theme to "dark" so built-in widgets
 # render with dark backgrounds, matching our custom CSS.
 base = "dark"
