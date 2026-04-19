@@ -30,7 +30,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 # =============================================================================
 st.set_page_config(
     page_title="IoT Botnet IDS",
-    page_icon=None,               # No emoji icon
+    page_icon=None,
     layout="wide",
     initial_sidebar_state="collapsed"
 )
