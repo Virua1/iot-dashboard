@@ -6,19 +6,19 @@
 # =============================================================================
 
 # Core web application framework for the dashboard UI
-streamlit==1.35.0
+streamlit
 
 # Data manipulation, CSV reading, and DataFrame operations
-pandas==2.2.2
+pandas
 
 # Machine learning: model loading, metrics (accuracy, precision, recall, confusion matrix)
-scikit-learn==1.5.0
+scikit-learn
 
 # Model serialization: loading pre-trained .joblib files (scaler + models)
-joblib==1.4.2
+joblib
 
 # Interactive charting: Confusion Matrix heatmaps and pie charts
-plotly==5.22.0
+plotly
 
 # Numerical operations: array handling, random demo predictions
-numpy==1.26.4
+numpy
