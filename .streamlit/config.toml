@@ -1,7 +1,2 @@
 [server]
 maxUploadSize = 500
-maxMessageSize = 500
-
-[theme]
-base = "dark"
-primaryColor = "#00E5FF"
