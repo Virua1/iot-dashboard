@@ -1,58 +1,7 @@
-# =============================================================================
-# FILE: .streamlit/config.toml
-# PURPOSE: Streamlit server configuration for the IoT Botnet IDS dashboard.
-#
-# SETUP INSTRUCTIONS:
-#   1. Create a folder named ".streamlit" in the same directory as app.py
-#   2. Place this file inside it: .streamlit/config.toml
-#   3. The final structure should be:
-#
-#        your_project/
-#        ├── .streamlit/
-#        │   └── config.toml        <-- THIS FILE
-#        ├── app.py
-#        ├── requirements.txt
-#        ├── random_forest.joblib
-#        ├── logistic_regression.joblib
-#        ├── svm.joblib
-#        └── scaler.joblib
-#
-#   4. Restart Streamlit after creating this file.
-#   5. For Streamlit Cloud: commit this file to your GitHub repository.
-#      Streamlit Cloud reads config.toml automatically from the repo.
-# =============================================================================
-
-
-# Maximum allowed size (in MB) for file uploads via st.file_uploader.
-# Default is 200 MB. Set to 500 MB to accommodate large network capture files.
+[server]
 maxUploadSize = 500
-
-# Maximum message size (in MB) for WebSocket communication.
-# Increase this alongside maxUploadSize to prevent connection timeouts on large files.
 maxMessageSize = 500
 
-# Set to false to prevent the browser from auto-opening when running locally.
-# Useful for headless server environments.
-headless = false
-
-
-# Force Streamlit's base theme to "dark" so built-in widgets
-# render with dark backgrounds, matching our custom CSS.
+[theme]
 base = "dark"
-
-# Primary accent color — used by Streamlit for default widget highlights.
-# Matches our CSS --accent variable (electric cyan).
 primaryColor = "#00E5FF"
-
-# Background color for the main content area.
-# Our CSS overrides this further, but setting it here ensures consistency.
-backgroundColor = "#080C14"
-
-# Background color for secondary elements (sidebar, input fields).
-secondaryBackgroundColor = "#0D1420"
-
-# Default text color.
-textColor = "#E8EEF7"
-
-# Font choice for Streamlit's built-in text elements.
-font = "monospace"
