@@ -1,0 +1,24 @@
+# =============================================================================
+# FILE: requirements.txt
+# PROJECT: IoT Botnet-based DDoS Detection in Smart Cities — IDS Dashboard
+# DESCRIPTION: Exact pinned library versions for reproducible deployment.
+#              Install with: pip install -r requirements.txt
+# =============================================================================
+
+# Core web application framework for the dashboard UI
+streamlit==1.35.0
+
+# Data manipulation, CSV reading, and DataFrame operations
+pandas==2.2.2
+
+# Machine learning: model loading, metrics (accuracy, precision, recall, confusion matrix)
+scikit-learn==1.5.0
+
+# Model serialization: loading pre-trained .joblib files (scaler + models)
+joblib==1.4.2
+
+# Interactive charting: Confusion Matrix heatmaps and pie charts
+plotly==5.22.0
+
+# Numerical operations: array handling, random demo predictions
+numpy==1.26.4
