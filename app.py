@@ -30,10 +30,11 @@ to classify network traffic and detect potential Botnet attacks in real-time.
 
 @st.cache_resource
 def load_security_models():
-    rf = joblib.load('rf_model.pkl')
-    lr = joblib.load('lr_model.pkl')
-    svm = joblib.load('svm_model.pkl')
-    scaler = joblib.load('scaler.pkl')
+    # تم تعديل الامتدادات إلى .joblib
+    rf = joblib.load('random_forest.joblib')
+    lr = joblib.load('logistic_regression.joblib')
+    svm = joblib.load('svm.joblib')
+    scaler = joblib.load('scaler.joblib')
     return rf, lr, svm, scaler
 
 try:
@@ -46,7 +47,7 @@ except Exception as e:
 st.sidebar.header("System Settings")
 st.sidebar.info("The system automatically selects the best model based on data complexity and size.")
 
-# File uploader (accepts testing or training data)
+# File uploader
 uploaded_file = st.file_uploader("Upload Network Traffic Data (CSV Format - Training or Testing)", type="csv")
 
 if uploaded_file is not None:
@@ -65,7 +66,7 @@ if uploaded_file is not None:
             processed_df = df.copy()
             processed_df = processed_df.replace([np.inf, -np.inf], np.nan).fillna(0)
             
-            # Determine if target column exists (for evaluation)
+            # Determine if target column exists
             has_target = False
             target_col_name = None
             if 'attack' in processed_df.columns:
@@ -133,7 +134,6 @@ if uploaded_file is not None:
             results_df['Detection_Result'] = ["ATTACK" if p == 1 else "NORMAL" for p in predictions]
             st.write(results_df[['Detection_Result']].merge(features_df.head(100), left_index=True, right_index=True))
 
-        # Show Evaluation Metrics if target column is present (Testing Data)
         if has_target:
              st.divider()
              st.subheader("Model Evaluation on Test Data")
@@ -153,7 +153,6 @@ if uploaded_file is not None:
              ax.set_xlabel('Predicted')
              ax.set_ylabel('Actual')
              st.pyplot(fig)
-
 
         csv_results = results_df.to_csv(index=False).encode('utf-8')
         st.download_button(
